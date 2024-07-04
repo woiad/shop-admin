@@ -2,4 +2,18 @@
   <h1>登录</h1>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { getLoginInfo } from '@/api/common'
+import { onMounted, ref } from 'vue'
+import type { ILoginInfo } from '@/api/types/common'
+
+const list = ref<ILoginInfo['slide']>([])
+
+onMounted(() => {
+  getLoginInfo().then(data => {
+    console.log(data)
+    list.value = data.slide
+    console.log(list.value)
+  })
+})
+</script>
