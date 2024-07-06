@@ -9,7 +9,7 @@ import { ILoginInfo } from './types/common'
 export const getLoginInfo = () => {
   return request<ILoginInfo>({
     method: 'GET',
-    url: '/login/info'
+    url: '/admin/login/info'
   })
   // return request.get<ResponseData<{
   //   login_logo: string,
