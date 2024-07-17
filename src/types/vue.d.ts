@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { ComponentCustomProperties } from 'vue'
 import { Store } from 'vuex'
-import { State } from './store/index.ts'
+import { State } from '../store/index.js'
 
 declare module '@vue/runtime-core' {
 

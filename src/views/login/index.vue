@@ -71,18 +71,22 @@
 <script lang="ts" setup>
 import { onMounted, reactive, ref } from 'vue'
 import { getCaptcha, login } from '@/api/common'
-import { ElForm } from 'element-plus'
-import { useRouter } from 'vue-router'
+import { IElForm, IElFormItemRule } from '@/types/element-plus'
+import { useRouter, useRoute } from 'vue-router'
+import { useStore } from '@/store'
 
 const router = useRouter()
-const form = ref<InstanceType<typeof ElForm> | null>(null)
+const route = useRoute()
+const store = useStore()
+
+const form = ref<IElForm | null>(null)
 const user = reactive({
   account: 'admin',
   pwd: '123456',
   imgcode: ''
 })
 const loading = ref(false)
-const rules = ref({
+const rules = ref<IElFormItemRule>({
   account: [
     { required: true, message: '请输入账号', trigger: 'change' }
   ],
@@ -103,10 +107,16 @@ const handleSubmit = async () => {
     loading.value = false
   })
   console.log(data)
-
-  router.replace({
-    name: 'home'
+  store.commit('setUser', {
+    ...data.user_info,
+    token: data.token
   })
+
+  let redirect = route.query.redirect || '/'
+  if (typeof redirect !== 'string') {
+    redirect = '/'
+  }
+  router.replace(redirect)
 }
 
 onMounted(() => {

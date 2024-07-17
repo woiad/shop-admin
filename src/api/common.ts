@@ -43,3 +43,10 @@ export const login = (data: {
     data
   })
 }
+
+export const logout = () => {
+  return request<IloginResponse>({
+    method: 'GET',
+    url: '/admin/setting/admin/logout'
+  })
+}
