@@ -85,7 +85,7 @@
 </template>
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { IElForm, IFormRule } from '@/types/element-plus'
+import type { IElForm, IElFormItemRule } from '@/types/element-plus'
 import type { ISelectionOptions } from '@/api/types/form'
 
 import { ref } from 'vue'
@@ -117,7 +117,7 @@ const formData = ref({
 })
 const formLoading = ref(false)
 
-const formRules: IFormRule = {
+const formRules: IElFormItemRule = {
   account: [
     { required: true, message: '请输入管理员账号', trigger: 'blur' }
   ],
