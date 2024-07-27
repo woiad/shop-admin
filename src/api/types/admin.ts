@@ -31,5 +31,5 @@ export interface IAdminPostData {
   pwd: string,
   roles: number [],
   status: 0 | 1,
-  reale_name: string
+  real_name: string
 }

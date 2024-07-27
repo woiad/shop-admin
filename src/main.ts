@@ -5,6 +5,8 @@ import router from './router'
 import { store, key } from './store'
 import ElementPlus from './plugins/element-plus'
 import ElementPlusIcon from './plugins/element-icon'
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
 
 // 加载全局样式
 import './styles/index.scss'
@@ -15,6 +17,7 @@ app.use(router)
 app.use(store, key)
 app.use(ElementPlus)
 app.use(ElementPlusIcon)
+app.use(VXETable)
 
 // 自动注册全局组件
 const modules = import.meta.globEager('./components/**/index.ts')

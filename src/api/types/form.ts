@@ -12,7 +12,7 @@ export interface IFormRule {
   type: string,
   validate?: FormItemRule
   value: string,
-  options?: ISelectionOptions
+  options?: ISelectionOptions[]
 }
 
 export interface IFormData {

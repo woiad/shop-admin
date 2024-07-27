@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 import { IListParam, IAdmin, IAdminPostData } from './types/admin'
-import { IFormData } from './types/form'
+import { IFormData, IFormRule } from './types/form'
 
 export const getAdmins = (params: IListParam) => {
   return request<{
@@ -48,7 +48,7 @@ export const getRoles = () => {
     method: 'GET',
     url: '/admin/setting/admin/create'
   }).then(res => {
-    const roles = res.rules.find(item => item.field === 'roles')
+    const roles = res.rules.find(item => item.field === 'roles') as IFormRule
     if (roles && roles.options) {
       return roles.options
     }
