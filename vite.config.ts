@@ -44,12 +44,5 @@ export default defineConfig({
         additionalData: '@import "@/styles/variables.scss";'
       }
     }
-  },
-  build: {
-    rollupOptions: {
-      external: [
-        'element-plus'
-      ]
-    }
   }
 })
