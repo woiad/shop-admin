@@ -17,6 +17,14 @@ const routes: RouteRecordRaw = {
       component: () => import('@/views/product/list/index.vue')
     },
     {
+      path: 'add_product',
+      name: 'product_add',
+      meta: {
+        title: '添加商品'
+      },
+      component: () => import('@/views/product/add/index.vue')
+    },
+    {
       path: 'product_classify',
       name: 'product_classify',
       meta: {

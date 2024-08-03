@@ -12,15 +12,18 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.7.2",
     "element-plus": "^2.7.6",
     "install": "^0.13.0",
     "npm": "^10.8.2",
     "nprogress": "^0.2.0",
+    "sortablejs": "^1.15.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
     "vuex": "^4.1.0",
-    "vxe-table": "^4.6.18"
+    "vxe-table": "^4.6.18",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
